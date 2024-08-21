@@ -367,7 +367,6 @@ h2 {
         grid-template-columns: repeat(2, 1fr);
         grid-template-rows: repeat(13, 1fr);
         gap: 5px;
-        
     }
         
     .div1 {
@@ -458,14 +457,26 @@ h2 {
 @media (max-width: 591px) {
     .CardWeather{
         margin:0px;
-        padding: 5px;
+        padding: 2px;
         max-width: 120px;
+    }
+
+    .clima-container {
+        gap:3px;
     }
 }
 
 @media (max-width: 400px) {
 
+    .CardWeather{
+        padding: 1px;
+    }
+
     #clima {
         padding-top: 110px;
+    }
+
+    .clima-container {
+        gap:2px;
     }
 }
