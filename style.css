@@ -101,13 +101,12 @@ body {
     justify-content: center;
     align-items: center;
     text-align: center;
-    gap:5px;
+    gap: 5px;
 }
 
 .CardCiudad p img {
     height: 32px;
     width: 32px;
-    
 }
 
 
@@ -123,9 +122,13 @@ body {
 .CardWeather {
     margin: 5px;
     padding: 20px 10px;
-    max-width: 400px;
-    border: 1px solid Black;
+    width: 300px;
+    border: 1px solid #357abd;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0.1, 0.1, 0.1, 0.1);
     list-style: none;
+    background-color: #f7f7f7;
+    /* Fondo suave */
 }
 
 .CardWeather div ul li {
@@ -138,15 +141,21 @@ body {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: repeat(8, 1fr);
-    gap: 8px;
+    gap: 5px;
 }
 
 .div1 {
     grid-column: span 2 / span 2;
-    grid-row: span 4 / span 4;
+    grid-row: span 3 / span 3;
     display: flex;
-    justify-content: center; /* Centra horizontalmente */
-    align-items: center;     /* Centra verticalmente */ 
+    justify-content: center;
+    align-items: center;
+}
+
+.div1 img {
+    border: 1px solid #3e9bf8;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0.1, 0.1, 0.1, 0.1);
 }
 
 
@@ -157,36 +166,40 @@ body {
     font-size: 2.5em;
     font-style: normal;
     display: flex;
-    justify-content: center; /* Centra horizontalmente */
-    align-items: center;     /* Centra verticalmente */ 
+    justify-content: center;
+    align-items: center;
 }
 
 .div3 {
-    grid-column-start: 3;
+    grid-column: span 4 / span 4;
     grid-row-start: 4;
     font-size: 1.2em;
-    color: rgb(90, 89, 89) ;
     display: flex;
-    justify-content: right; /* Centra horizontalmente */
-    align-items: center;  
+    justify-content: center;
+    align-items: center;
 }
 
-.div4 {
-    grid-column-start: 4;
-    grid-row-start: 4;
-    font-size: 1.2em;
-    color: rgb(146, 144, 144) ;
-    display: flex;
-    justify-content: left; /* Centra horizontalmente */
-    align-items: center;  
+.div3 span:first-child {
+    font-weight: bold;
+    color: #ff6f61;
+    /* Rojo coral claro para la temperatura máxima */
+    margin-right: 10px;
+    /* Espacio entre temperaturas */
+}
+
+.div3 span:last-child {
+    font-weight: bold;
+    color: #64b5f6;
+    /* Azul claro para la temperatura mínima */
 }
 
 .div5 {
     grid-column: span 2 / span 2;
     grid-row-start: 5;
     display: flex;
-    justify-content: center; /* Centra horizontalmente */
-    align-items: center;  
+    justify-content: center;
+    /* Centra horizontalmente */
+    align-items: center;
     font-size: 1em;
     gap: 1em;
 }
@@ -201,11 +214,13 @@ body {
     grid-column-start: 3;
     grid-row-start: 5;
     display: flex;
-    justify-content: center; /* Centra horizontalmente */
-    align-items: center;  
+    justify-content: center;
+    /* Centra horizontalmente */
+    align-items: center;
     font-size: 1em;
     gap: 1em;
 }
+
 .div6 img {
     width: 30px;
     height: 30px;
@@ -215,8 +230,9 @@ body {
     grid-column: span 2 / span 2;
     grid-row-start: 6;
     display: flex;
-    justify-content: center; /* Centra horizontalmente */
-    align-items: center;  
+    justify-content: center;
+    /* Centra horizontalmente */
+    align-items: center;
     font-size: 1em;
     gap: 1em;
 }
@@ -231,8 +247,9 @@ body {
     grid-column-start: 3;
     grid-row-start: 6;
     display: flex;
-    justify-content: center; /* Centra horizontalmente */
-    align-items: center;  
+    justify-content: center;
+    /* Centra horizontalmente */
+    align-items: center;
     font-size: 1em;
     gap: 1em;
 
@@ -247,8 +264,9 @@ body {
     grid-column: span 2 / span 2;
     grid-row-start: 7;
     display: flex;
-    justify-content: center; /* Centra horizontalmente */
-    align-items: center;  
+    justify-content: center;
+    /* Centra horizontalmente */
+    align-items: center;
     font-size: 1em;
     gap: 0.5em;
 }
@@ -263,8 +281,9 @@ body {
     grid-column-start: 3;
     grid-row-start: 7;
     display: flex;
-    justify-content: center; /* Centra horizontalmente */
-    align-items: center;  
+    justify-content: center;
+    /* Centra horizontalmente */
+    align-items: center;
     font-size: 1em;
     gap: 1em;
 }
@@ -278,8 +297,9 @@ body {
     grid-column: span 4 / span 4;
     grid-row-start: 8;
     display: flex;
-    justify-content: center; /* Centra horizontalmente */
-    align-items: flex-end;  
+    justify-content: center;
+    /* Centra horizontalmente */
+    align-items: flex-end;
     font-size: 1em;
     gap: 1em;
     color: rgb(160, 159, 159);
@@ -287,15 +307,36 @@ body {
 
 /* Grid con Cards */
 
-h1 {
+h2 {
     text-align: center;
     margin-bottom: 20px;
 }
 
+
+@media (max-width: 900px) {
+    .CardCiudad{
+        gap:7.5%
+    }
+}
+
 /* Media Query para pantallas de dispositivos móviles */
-@media (max-width: 600px) {
+@media (max-width: 680px) {
     .header {
         padding: 10px 5px;
+    }
+
+    .container  {
+        padding-left: 40px;
+    }
+
+    .CardCiudad {
+        flex-wrap: wrap;
+        padding: 10px 0px;
+        gap:10px
+    }
+
+    #clima {
+        padding-top: 90px;
     }
 
     .logo {
@@ -314,5 +355,117 @@ h1 {
 
     .search-form button {
         margin-bottom: 0;
+    }
+
+    .CardWeather{
+        margin:0px;
+        padding: 10px;
+        max-width: 180px;
+    }
+    .clima-container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(13, 1fr);
+        gap: 5px;
+        
+    }
+        
+    .div1 {
+        grid-column: span 2 / span 2;
+        grid-row: span 3 / span 3;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        
+    }
+    
+    .div2 {
+        grid-column: span 2 / span 2;
+        grid-row: span 2 / span 2;
+        grid-row-start: 4;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 1.8em;
+    }
+    
+    .div3 {
+        grid-column: span 2 / span 2;
+        grid-row-start: 6;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 0.8em;
+    }
+    
+    .div5 {
+        grid-column: span 2 / span 2;
+        grid-row-start: 7;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .div6 {
+        grid-column: span 2 / span 2;
+        grid-row-start: 8;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .div7 {
+        grid-column: span 2 / span 2;
+        grid-row-start: 9;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .div8 {
+        grid-column: span 2 / span 2;
+        grid-row-start: 10;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .div9 {
+        grid-column: span 2 / span 2;
+        grid-row-start: 11;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .div10 {
+        grid-column: span 2 / span 2;
+        grid-row-start: 12;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .div11 {
+        grid-column: span 2 / span 2;
+        grid-row-start: 13;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+@media (max-width: 591px) {
+    .CardWeather{
+        margin:0px;
+        padding: 5px;
+        max-width: 125px;
+    }
+}
+
+@media (max-width: 400px) {
+
+    #clima {
+        padding-top: 110px;
     }
 }

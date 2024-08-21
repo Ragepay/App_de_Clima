@@ -65,7 +65,7 @@ function mostrarClima(data) {
     container.classList.add("CardCiudad")
 
     // Titulo de Ciudad
-    const titulo = document.createElement('h2');
+    const titulo = document.createElement('h1');
     titulo.innerText = `${data.city.name}, ${data.city.country}`;
     container.appendChild(titulo);
 
@@ -93,20 +93,20 @@ function mostrarClima(data) {
         const div = document.createElement('div');
         div.classList.add("CardWeather")
         div.innerHTML = `
-        <h1>${getDayAndHour(element.dt_txt)}</h1>
+        <h2>${getDayAndHour(element.dt_txt)}</h2>
 
         <div class="clima-container">
-            <div class="div1"><img src="./img/${element.weather[0].description}.png" alt="${element.weather[0].description}" title="${element.weather[0].description}"></img></div>
-            <div class="div2">${element.main.temp}°C</div>
-            <div class="div3">${element.main.temp_max}°C /</div>
-            <div class="div4">${element.main.temp_min}°C</div>
+            <div class="div1"><img src="https://openweathermap.org/img/wn/${element.weather[0].icon}@2x.png" alt="${element.weather[0].description}" title="${element.weather[0].description}"></img></div>
+            <div class="div2" title="Temperatura">${element.main.temp}°C</div>
+            <div class="div3" title="Temperatura Maxima"><span>${element.main.temp_max}°C</span> / <span>${element.main.temp_min}°C</span></div>
+            
             <div class="div5"><img src="https://img.icons8.com/?size=100&id=mD5PxYIC4jJB&format=png&color=000000" alt="Nubes" title="Nubes"></img> ${element.clouds.all}%</div>
             <div class="div6"><img src="https://img.icons8.com/?size=100&id=HmOAh0U72WAF&format=png&color=000000" alt="Sensación Térmica" title="Sensación Térmica"></img> ${element.main.feels_like}°C</div>
             <div class="div7"><img src="https://img.icons8.com/?size=100&id=A01OMLqyaokr&format=png&color=000000" alt="Humedad" title="Humedad"></img> ${element.main.humidity}%</div>
             <div class="div8"><img src="https://img.icons8.com/?size=100&id=38869&format=png&color=000000" alt="Visibilidad" title="Visibilidad"></img> ${(element.visibility / 1000).toFixed(1)} km</div>
             <div class="div9"><img src="https://img.icons8.com/?size=100&id=HJ1sbJDgQ6i5&format=png&color=000000" alt="Presión" title="Presión"></img> ${element.main.pressure} hPa</div>
             <div class="div10"><img src="https://img.icons8.com/?size=100&id=RtDA8YDN9Mi9&format=png&color=000000" alt="Velocidad del viento" title="Velocidad del viento"></img> ${element.wind.speed} km/h</div>
-            <div class="div11">${parseTimestamp(element.dt)}</div>
+            <div class="div11" title="Fecha">${parseTimestamp(element.dt)}</div>
         </div>`;
         divCards.appendChild(div);
     });
