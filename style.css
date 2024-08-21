@@ -314,8 +314,8 @@ h2 {
 
 
 @media (max-width: 900px) {
-    .CardCiudad{
-        gap:7.5%
+    .CardCiudad {
+        gap: 7.5%
     }
 }
 
@@ -325,14 +325,14 @@ h2 {
         padding: 10px 5px;
     }
 
-    .container  {
+    .container {
         padding-left: 40px;
     }
 
     .CardCiudad {
         flex-wrap: wrap;
         padding: 10px 0px;
-        gap:10px
+        gap: 10px
     }
 
     #clima {
@@ -357,27 +357,28 @@ h2 {
         margin-bottom: 0;
     }
 
-    .CardWeather{
-        margin:0px;
+    .CardWeather {
+        margin: 0px;
         padding: 10px;
         max-width: 180px;
     }
+
     .clima-container {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         grid-template-rows: repeat(13, 1fr);
         gap: 5px;
     }
-        
+
     .div1 {
         grid-column: span 2 / span 2;
         grid-row: span 3 / span 3;
         display: flex;
         justify-content: center;
         align-items: center;
-        
+
     }
-    
+
     .div2 {
         grid-column: span 2 / span 2;
         grid-row: span 2 / span 2;
@@ -387,7 +388,7 @@ h2 {
         align-items: center;
         font-size: 1.8em;
     }
-    
+
     .div3 {
         grid-column: span 2 / span 2;
         grid-row-start: 6;
@@ -396,7 +397,7 @@ h2 {
         align-items: center;
         font-size: 0.8em;
     }
-    
+
     .div5 {
         grid-column: span 2 / span 2;
         grid-row-start: 7;
@@ -404,7 +405,7 @@ h2 {
         justify-content: center;
         align-items: center;
     }
-    
+
     .div6 {
         grid-column: span 2 / span 2;
         grid-row-start: 8;
@@ -412,7 +413,7 @@ h2 {
         justify-content: center;
         align-items: center;
     }
-    
+
     .div7 {
         grid-column: span 2 / span 2;
         grid-row-start: 9;
@@ -420,7 +421,7 @@ h2 {
         justify-content: center;
         align-items: center;
     }
-    
+
     .div8 {
         grid-column: span 2 / span 2;
         grid-row-start: 10;
@@ -428,7 +429,7 @@ h2 {
         justify-content: center;
         align-items: center;
     }
-    
+
     .div9 {
         grid-column: span 2 / span 2;
         grid-row-start: 11;
@@ -436,7 +437,7 @@ h2 {
         justify-content: center;
         align-items: center;
     }
-    
+
     .div10 {
         grid-column: span 2 / span 2;
         grid-row-start: 12;
@@ -444,7 +445,7 @@ h2 {
         justify-content: center;
         align-items: center;
     }
-    
+
     .div11 {
         grid-column: span 2 / span 2;
         grid-row-start: 13;
@@ -455,21 +456,37 @@ h2 {
 }
 
 @media (max-width: 591px) {
-    .CardWeather{
-        margin:0px;
+    .CardWeather {
+        margin: 0px;
         padding: 2px;
-        max-width: 120px;
+        max-width: 110px;
     }
 
     .clima-container {
-        gap:3px;
+        gap: 3px;
     }
 }
 
 @media (max-width: 400px) {
 
-    .CardWeather{
-        padding: 1px;
+    .CardWeather {
+
+        padding: 5px 1px;
+        max-width: 100px;
+    }
+
+    .div1 img {
+        width: 64px;
+        height: 64px;
+    }
+
+    #div2 {
+        font-size: 1.5em;
+    }
+
+
+    .CardWeather div {
+        font-size: 0.825em;
     }
 
     #clima {
@@ -477,6 +494,6 @@ h2 {
     }
 
     .clima-container {
-        gap:2px;
+        gap: 2px;
     }
 }

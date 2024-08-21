@@ -96,8 +96,8 @@ function mostrarClima(data) {
         <h2>${getDayAndHour(element.dt_txt)}</h2>
 
         <div class="clima-container">
-            <div class="div1"><img src="https://openweathermap.org/img/wn/${element.weather[0].icon}@2x.png" alt="${element.weather[0].description}" title="${element.weather[0].description}"></img></div>
-            <div class="div2" title="Temperatura">${element.main.temp}°C</div>
+            <div class="div1" ><img src="https://openweathermap.org/img/wn/${element.weather[0].icon}@2x.png" alt="${element.weather[0].description}" title="${element.weather[0].description}"></img></div>
+            <div class="div2" id="div2" title="Temperatura">${element.main.temp}°C</div>
             <div class="div3" title="Temperatura Maxima"><span>${element.main.temp_max}°C</span> / <span>${element.main.temp_min}°C</span></div>
             
             <div class="div5"><img src="https://img.icons8.com/?size=100&id=mD5PxYIC4jJB&format=png&color=000000" alt="Nubes" title="Nubes"></img> ${element.clouds.all}%</div>
