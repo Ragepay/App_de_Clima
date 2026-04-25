@@ -15,9 +15,11 @@
             <h1 class="logo">ClimaApp</h1>
             <form class="search-form" id="search-form">
                 <input type=" text" placeholder="Buscar ciudad..." aria-label="Buscar ciudad" id="city">
-                <input type="number" placeholder="Cantidad de días..." aria-label="Cantidad de dias..." id="dias">
+                <input type="number" placeholder="Días (1 a 5)..." aria-label="Cantidad de días" id="dias" min="1" max="5" title="El pronóstico gratuito permite un máximo de 5 días">
                 <button type="submit">Buscar</button>
+                <button type="button" id="geo-btn" class="geo-btn" title="Usar mi ubicación">📍</button>
             </form>
+            <button id="unit-toggle" class="unit-toggle" title="Cambiar unidad de temperatura">°C</button>
         </div>
     </header>
 

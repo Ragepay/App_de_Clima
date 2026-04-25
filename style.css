@@ -1,30 +1,37 @@
+:root {
+    --primary-color: #4a90e2;
+    --primary-dark: #357abd;
+    --bg-color: #f4f7f6;
+    --card-bg: #ffffff;
+    --text-main: #333333;
+    --text-muted: #777777;
+    --temp-max: #ff6f61;
+    --temp-min: #64b5f6;
+    --shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    --shadow-hover: 0 8px 25px rgba(0, 0, 0, 0.12);
+}
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* styles.css */
-
-/* styles.css */
-
 body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    color: #333;
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    color: var(--text-main);
+    background-color: var(--bg-color);
 }
 
 .header {
-    background-color: #4a90e2;
+    background-color: var(--primary-color);
     color: white;
-    padding: 10px 0;
-    position: fixed;
+    padding: 15px 0;
+    position: sticky;
     width: 100%;
     top: 0;
-    left: 0;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     z-index: 1000;
-    /* Asegura que el header esté por encima de otros elementos */
 }
 
 .container {
@@ -34,466 +41,284 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    flex-wrap: wrap;
-    /* Permite que los elementos se ajusten en pantallas pequeñas */
+    flex-wrap: wrap; 
+    gap: 15px;
 }
 
 .logo {
-    font-size: 24px;
-    margin: 0;
+    font-size: 26px;
+    font-weight: 600;
 }
 
 .search-form {
     display: flex;
-    align-items: center;
-    flex-wrap: wrap;
-    /* Permite que el formulario se ajuste en pantallas pequeñas */
     gap: 5px;
 }
 
 .search-form input {
-    padding: 8px;
-    border: none;
-    border-radius: 4px;
+    padding: 10px 15px;
+    border: 1px solid transparent;
+    border-radius: 8px;
     outline: none;
-    flex: 1;
-    /* Hace que el input ocupe el espacio disponible */
-    min-width: 200px;
-    /* Asegura un ancho mínimo para el input */
+    width: 100%;
+    max-width: 250px;
+    font-size: 16px;
+    transition: border 0.3s ease;
+}
+
+.search-form input:focus {
+    border: 1px solid #fff;
 }
 
 .search-form button {
-    padding: 8px 16px;
+    padding: 10px 20px;
     border: none;
-    border-radius: 0 4px 4px 0;
-    background-color: #357abd;
+    border-radius: 8px;
+    background-color: var(--primary-dark);
     color: white;
     cursor: pointer;
     font-size: 16px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
 }
 
 .search-form button:hover {
-    background-color: #005a9c;
+    background-color: #275d94;
+}
+
+.search-form .geo-btn {
+    background-color: var(--card-bg);
+    color: var(--text-main);
+    padding: 10px 15px;
+}
+
+.search-form .geo-btn:hover {
+    background-color: #e2e8f0;
+}
+
+.unit-toggle {
+    padding: 10px 15px;
+    border: 2px solid #fff;
+    border-radius: 8px;
+    background-color: transparent;
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.unit-toggle:hover {
+    background-color: #fff;
+    color: var(--primary-color);
 }
 
 #clima {
-    margin: 60px 0px;
-    padding: 10px;
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    display: flex;
-    flex-direction: column;
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
 }
 
 .CardCiudad {
-    padding: 10px 0px;
-    display: inline-flex;
+    background-color: var(--card-bg);
+    border-radius: 16px;
+    padding: 25px;
+    display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    text-align: center;
-    gap: 15%;
-    background-color: #f0f0f0;
+    gap: 30px;
+    box-shadow: var(--shadow);
+    margin-bottom: 30px;
 }
 
-.CardCiudad p {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.CardCiudad h1 {
+    width: 100%;
     text-align: center;
-    gap: 5px;
+    color: var(--primary-color);
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.CardCiudad p { 
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 1.1rem;
+    color: var(--text-muted);
 }
 
 .CardCiudad p img {
-    height: 32px;
-    width: 32px;
+    height: 28px;
+    width: 28px;
+    opacity: 0.8;
 }
 
-
 .divCards {
-    margin: 5px;
-    padding: 5px;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    gap: 5px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 20px;
 }
 
 .CardWeather {
-    margin: 5px;
-    padding: 20px 10px;
-    width: 300px;
-    border: 1px solid #357abd;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0.1, 0.1, 0.1, 0.1);
-    list-style: none;
-    background-color: #f7f7f7;
-    /* Fondo suave */
-}
-
-.CardWeather div ul li {
-
-    list-style: none;
-}
-
-/* Grid con Cards */
-.clima-container {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: repeat(8, 1fr);
-    gap: 5px;
-}
-
-.div1 {
-    grid-column: span 2 / span 2;
-    grid-row: span 3 / span 3;
+    background-color: var(--card-bg);
+    border-radius: 16px;
+    padding: 25px 20px;
+    box-shadow: var(--shadow);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
+    border-top: 5px solid var(--primary-color);
 }
 
-.div1 img {
-    border: 1px solid #3e9bf8;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0.1, 0.1, 0.1, 0.1);
+.CardWeather:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-hover);
 }
 
-
-.div2 {
-    grid-column: span 2 / span 2;
-    grid-row: span 3 / span 3;
-    grid-column-start: 3;
-    font-size: 2.5em;
-    font-style: normal;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.weather-date {
+    font-size: 1.2rem;
+    color: var(--text-muted);
+    margin-bottom: 15px;
+    text-transform: capitalize;
 }
 
-.div3 {
-    grid-column: span 4 / span 4;
-    grid-row-start: 4;
-    font-size: 1.2em;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.div3 span:first-child {
-    font-weight: bold;
-    color: #ff6f61;
-    /* Rojo coral claro para la temperatura máxima */
-    margin-right: 10px;
-    /* Espacio entre temperaturas */
-}
-
-.div3 span:last-child {
-    font-weight: bold;
-    color: #64b5f6;
-    /* Azul claro para la temperatura mínima */
-}
-
-.div5 {
-    grid-column: span 2 / span 2;
-    grid-row-start: 5;
-    display: flex;
-    justify-content: center;
-    /* Centra horizontalmente */
-    align-items: center;
-    font-size: 1em;
-    gap: 1em;
-}
-
-.div5 img {
-    width: 40px;
-    height: 40px;
-}
-
-.div6 {
-    grid-column: span 2 / span 2;
-    grid-column-start: 3;
-    grid-row-start: 5;
-    display: flex;
-    justify-content: center;
-    /* Centra horizontalmente */
-    align-items: center;
-    font-size: 1em;
-    gap: 1em;
-}
-
-.div6 img {
-    width: 30px;
-    height: 30px;
-}
-
-.div7 {
-    grid-column: span 2 / span 2;
-    grid-row-start: 6;
-    display: flex;
-    justify-content: center;
-    /* Centra horizontalmente */
-    align-items: center;
-    font-size: 1em;
-    gap: 1em;
-}
-
-.div7 img {
-    width: 32px;
-    height: 32px;
-}
-
-.div8 {
-    grid-column: span 2 / span 2;
-    grid-column-start: 3;
-    grid-row-start: 6;
-    display: flex;
-    justify-content: center;
-    /* Centra horizontalmente */
-    align-items: center;
-    font-size: 1em;
-    gap: 1em;
-
-}
-
-.div8 img {
-    width: 32px;
-    height: 32px;
-}
-
-.div9 {
-    grid-column: span 2 / span 2;
-    grid-row-start: 7;
-    display: flex;
-    justify-content: center;
-    /* Centra horizontalmente */
-    align-items: center;
-    font-size: 1em;
-    gap: 0.5em;
-}
-
-.div9 img {
-    width: 32px;
-    height: 32px;
-}
-
-.div10 {
-    grid-column: span 2 / span 2;
-    grid-column-start: 3;
-    grid-row-start: 7;
-    display: flex;
-    justify-content: center;
-    /* Centra horizontalmente */
-    align-items: center;
-    font-size: 1em;
-    gap: 1em;
-}
-
-.div10 img {
-    width: 32px;
-    height: 32px;
-}
-
-.div11 {
-    grid-column: span 4 / span 4;
-    grid-row-start: 8;
-    display: flex;
-    justify-content: center;
-    /* Centra horizontalmente */
-    align-items: flex-end;
-    font-size: 1em;
-    gap: 1em;
-    color: rgb(160, 159, 159);
-}
-
-/* Grid con Cards */
-
-h2 {
+.weather-main {
     text-align: center;
     margin-bottom: 20px;
 }
 
+.weather-icon {
+    width: 90px;
+    height: 90px;
+    filter: drop-shadow(0px 4px 6px rgba(0,0,0,0.1));
+}
 
-@media (max-width: 900px) {
-    .CardCiudad {
-        gap: 7.5%
-    }
+.weather-temp {
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--text-main);
+    margin: 5px 0;
+}
+
+.weather-minmax {
+    font-size: 1.1rem;
+}
+
+.temp-max { color: var(--temp-max); font-weight: bold; }
+.temp-min { color: var(--temp-min); font-weight: bold; }
+
+.weather-details {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    width: 100%;
+    border-top: 1px solid #edf2f7;
+    padding-top: 20px;
+}
+
+.detail-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.95rem;
+    color: var(--text-muted);
+}
+
+.detail-item img {
+    width: 20px;
+    height: 20px;
+    opacity: 0.6;
+}
+
+.weather-footer {
+    margin-top: 20px;
+    font-size: 0.85rem;
+    color: #a0aec0;
+    text-align: center;
+    width: 100%;
+}
+
+/* Mensaje de Error */
+.error-container {
+    text-align: center;
+    padding: 50px 20px;
+    background: var(--card-bg);
+    border-radius: 16px;
+    box-shadow: var(--shadow);
+}
+
+.error-container h2 {
+    color: var(--temp-max);
+    margin: 15px 0;
+}
+
+/* --- SKELETON LOADING --- */
+.skeleton-card {
+    border-top: none !important;
+}
+
+.skeleton {
+    background: #e2e8f0;
+    background: linear-gradient(110deg, #ececec 8%, #f5f5f5 18%, #ececec 33%);
+    border-radius: 8px;
+    background-size: 200% 100%;
+    animation: 1.5s shimmer linear infinite;
+}
+
+.skeleton-circle {
+    border-radius: 50%;
+}
+
+@keyframes shimmer {
+    to { background-position-x: -200%; }
 }
 
 /* Media Query para pantallas de dispositivos móviles */
-@media (max-width: 680px) {
-    .header {
-        padding: 10px 5px;
-    }
-
+@media (max-width: 768px) {
     .container {
-        padding-left: 40px;
-    }
-
-    .CardCiudad {
-        flex-wrap: wrap;
-        padding: 10px 0px;
-        gap: 10px
-    }
-
-    #clima {
-        padding-top: 90px;
-    }
-
-    .logo {
-        font-size: 20px;
+        flex-direction: column;
+        text-align: center;
     }
 
     .search-form {
-        flex-direction: column;
-    }
-
-    .search-form input,
-    .search-form button {
         width: 100%;
-        margin-bottom: 5px;
-    }
-
-    .search-form button {
-        margin-bottom: 0;
-    }
-
-    .CardWeather {
-        margin: 0px;
-        padding: 10px;
-        max-width: 180px;
-    }
-
-    .clima-container {
         display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        grid-template-rows: repeat(13, 1fr);
-        gap: 5px;
+        grid-template-columns: 1fr auto auto;
+        grid-template-areas: 
+            "city city city"
+            "dias btn geo";
+        gap: 8px;
     }
 
-    .div1 {
-        grid-column: span 2 / span 2;
-        grid-row: span 3 / span 3;
-        display: flex;
+    .search-form input {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    #city {
+        grid-area: city;
+    }
+
+    #dias {
+        grid-area: dias;
+    }
+
+    .search-form button[type="submit"] {
+        grid-area: btn;
+    }
+
+    .search-form .geo-btn {
+        grid-area: geo;
+    }
+
+    .unit-toggle {
+        width: 100%;
+    }
+
+    .CardCiudad p {
+        width: 100%;
         justify-content: center;
-        align-items: center;
-
-    }
-
-    .div2 {
-        grid-column: span 2 / span 2;
-        grid-row: span 2 / span 2;
-        grid-row-start: 4;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        font-size: 1.8em;
-    }
-
-    .div3 {
-        grid-column: span 2 / span 2;
-        grid-row-start: 6;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        font-size: 0.8em;
-    }
-
-    .div5 {
-        grid-column: span 2 / span 2;
-        grid-row-start: 7;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-
-    .div6 {
-        grid-column: span 2 / span 2;
-        grid-row-start: 8;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-
-    .div7 {
-        grid-column: span 2 / span 2;
-        grid-row-start: 9;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-
-    .div8 {
-        grid-column: span 2 / span 2;
-        grid-row-start: 10;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-
-    .div9 {
-        grid-column: span 2 / span 2;
-        grid-row-start: 11;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-
-    .div10 {
-        grid-column: span 2 / span 2;
-        grid-row-start: 12;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-
-    .div11 {
-        grid-column: span 2 / span 2;
-        grid-row-start: 13;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-}
-
-@media (max-width: 591px) {
-    .CardWeather {
-        margin: 0px;
-        padding: 2px;
-        max-width: 110px;
-    }
-
-    .clima-container {
-        gap: 3px;
-    }
-}
-
-@media (max-width: 400px) {
-
-    .CardWeather {
-
-        padding: 5px 1px;
-        max-width: 100px;
-    }
-
-    .div1 img {
-        width: 64px;
-        height: 64px;
-    }
-
-    #div2 {
-        font-size: 1.5em;
-    }
-
-
-    .CardWeather div {
-        font-size: 0.825em;
-    }
-
-    #clima {
-        padding-top: 110px;
-    }
-
-    .clima-container {
-        gap: 2px;
     }
 }
